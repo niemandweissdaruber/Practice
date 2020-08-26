@@ -27,18 +27,63 @@
 
 // console.log(p, x);
 
-const bar = function () {
-  console.log('bar');
+// const bar = function () {
+//   console.log('bar');
+// };
+
+// const baz = function () {
+//   console.log('baz');
+// };
+
+// const foo = function () {
+//   console.log('foo');
+//   bar();
+//   baz();
+// };
+
+// foo();
+
+const Husband = function ({ nationality, height, job, languages = 2 } = {}) {
+  this.nationality = nationality;
+  this.height = height;
+  this.job = job;
+  this.languages = languages;
 };
 
-const baz = function () {
-  console.log('baz');
+Husband.prototype.changeJob = function (newJob) {
+  this.job = newJob;
 };
 
-const foo = function () {
-  console.log('foo');
-  bar();
-  baz();
+const myHusband = new Husband({
+  nationality: 'latin',
+  height: 190,
+  job: 'ambassador',
+});
+
+console.log(myHusband);
+myHusband.changeJob('narcotraficante');
+
+const myHusband2 = new Husband({
+  nationality: 'arab',
+  height: 185,
+  job: 'sheikh',
+  languages: ['arab', 'english', 'french'],
+});
+
+console.log(myHusband2);
+
+const Phone = function ({ model, year, storage, cameras } = {}) {
+  this.model = model;
+  this.year = year;
+  this.storage = storage;
+  this.cameras = cameras;
 };
 
-foo();
+const myPhone = new Phone({
+  model: 'iPhone',
+  year: 2020,
+  storage: '256 GB',
+  cameras: 4,
+});
+
+console.log(myPhone);
