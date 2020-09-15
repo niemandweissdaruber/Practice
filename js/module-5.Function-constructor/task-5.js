@@ -27,7 +27,7 @@ class Car {
     if (acceleratedSpeed <= this.maxSpeed) {
       this.speed = acceleratedSpeed;
     } else {
-      return this.maxSpeed;
+      return (this.speed = this.maxSpeed);
     }
   }
   decelerate(value) {
